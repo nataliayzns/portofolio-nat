@@ -1,0 +1,288 @@
+/* Root color variables */
+:root {
+  --pink-pastel: #f8c6d3;
+  --pink-pastel-light: #fde9ef;
+  --text-dark: #3a3a3a;
+  --text-light: #5a5a5a;
+  --btn-bg: #f1a9b8;
+  --btn-hover: #e37f8a;
+  --bg-gradient-start: #fbe7ec;
+  --bg-gradient-end: #ffffff;
+}
+
+/* Base reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  background-color: var(--pink-pastel);
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(243, 180, 195, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .nav-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 18px;
+  padding: 8px 15px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .nav-links a.active,
+nav .nav-links a:hover {
+  background-color: var(--btn-bg);
+  color: white;
+  box-shadow: 0 0 10px var(--btn-bg);
+}
+
+/* Main container */
+main {
+  max-width: 900px;
+  margin: 50px auto 80px;
+  padding: 0 20px;
+}
+
+/* Sections hidden by default */
+section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Welcome section */
+#home {
+  text-align: center;
+  padding: 60px 20px 40px;
+}
+
+#home h1.typing-text {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #d3547e;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Gif container */
+.gif-container {
+  margin-top: 25px;
+}
+
+/* About Me card */
+#about {
+  padding: 20px 10px;
+}
+
+.about-card {
+  max-width: 700px;
+  background: linear-gradient(135deg, var(--pink-pastel-light), #ffffff);
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(243, 180, 195, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 25px 30px;
+  gap: 20px;
+}
+
+.about-card img {
+  width: 180px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(243, 180, 195, 0.5);
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Portfolio */
+#portfolio h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #d3547e;
+}
+
+.proj-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.proj-card {
+  background: white;
+  max-width: 320px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(243, 180, 195, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.proj-card:hover {
+  transform: scale(1.05);
+}
+
+.proj-card img {
+  width: 100%;
+  display: block;
+}
+
+.proj-card p {
+  padding: 15px 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* Web Project Link */
+.web-project {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.web-project a {
+  text-decoration: underline;
+  color: #bb5577;
+  transition: color 0.3s ease;
+}
+
+.web-project a:hover {
+  color: #d3547e;
+}
+
+/* Courses & Achievements */
+#courses h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #d3547e;
+}
+
+.cert-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cert-card {
+  background: white;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(243, 180, 195, 0.3);
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+}
+
+.cert-card img {
+  width: 100%;
+  display: block;
+}
+
+.cert-card p {
+  padding: 15px 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* Next button */
+.btn-next {
+  margin: 40px auto 0;
+  display: block;
+  padding: 14px 30px;
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(243, 180, 195, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.btn-next:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-card {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-card img {
+    width: 140px;
+    margin-bottom: 20px;
+  }
+
+  .btn-next {
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  #home h1.typing-text {
+    font-size: 1.8rem;
+  }
+
+  #home p {
+    font-size: 1rem;
+  }
+}
