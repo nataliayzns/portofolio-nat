@@ -15,21 +15,24 @@ const showSection = (index) => {
       sec.style.opacity = 0;
     }
   });
-  // Update navbar active class
+
   document.querySelectorAll("nav .nav-links a").forEach(link => {
     link.classList.remove("active");
     if(link.getAttribute("data-target") === sections[index]){
       link.classList.add("active");
     }
   });
+
   currentIndex = index;
-  if(sections[index]==="home") {
+
+  if(sections[index] === "home") {
     startTypingEffect();
+  } else {
+    stopTypingEffect();
   }
 };
 
-// Typing effect for welcome text
-const typingText = "Welcome to My Portofolio";
+const typingText = "Welcome to My Portfolio";
 let typingIndex = 0;
 let typingInterval;
 
@@ -48,7 +51,10 @@ function startTypingEffect() {
   }, 100);
 }
 
-// Next button
+function stopTypingEffect() {
+  clearInterval(typingInterval);
+}
+
 document.querySelectorAll(".btn-next").forEach(btn => {
   btn.addEventListener("click", () => {
     let nextIndex = currentIndex + 1;
@@ -57,7 +63,6 @@ document.querySelectorAll(".btn-next").forEach(btn => {
   });
 });
 
-// Navbar link click
 document.querySelectorAll("nav .nav-links a").forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -67,7 +72,6 @@ document.querySelectorAll("nav .nav-links a").forEach(link => {
   });
 });
 
-// On load show home with typing effect
 window.addEventListener("load", () => {
   showSection(0);
 });
