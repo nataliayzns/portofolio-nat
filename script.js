@@ -32,7 +32,7 @@ const showSection = (index) => {
   }
 };
 
-const typingText = "Welcome to My Portfolio";
+const typingText = "Welcome to My Portofolio";
 let typingIndex = 0;
 let typingInterval;
 
